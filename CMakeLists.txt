@@ -8,8 +8,8 @@ include_directories(
 
 add_library(
     rapidjson_wrap 
-    rapidjson-wrap.cpp
-    rapidjson-wrap.h
+    json-wrap.cpp
+    json-wrap.h
 )
 
 add_executable(
