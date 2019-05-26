@@ -38,13 +38,13 @@ void testTraditionRapidJson()
 	rapidjson::Document document;
 	document.SetObject();
 	rapidjson::Document::AllocatorType& allocator = document.GetAllocator();
-	document.AddMember<int64_t>("userID", (int64_t)INT_MAX * 10, allocator);
-	document.AddMember<int>("tableID", INT_MAX, allocator);
-	document.AddMember<int>("seatID", INT_MIN, allocator);
+	document.AddMember<int64_t>("userID", (int64_t)INT32_MAX * 10, allocator);
+	document.AddMember<int>("tableID", INT32_MAX, allocator);
+	document.AddMember<int>("seatID", INT32_MIN, allocator);
 	rapidjson::Value object(rapidjson::kObjectType);
 	object.AddMember("key1", rapidjson::Value("Value1", allocator), allocator);
 	object.AddMember("key2", true, allocator);
-	object.AddMember("key3", NULL, allocator);
+    object.AddMember("key3", rapidjson::Value(rapidjson::kNullType), allocator);
 	rapidjson::Value object1(rapidjson::kObjectType);
 	object1.AddMember<char>("c", 'a', allocator);
 	object.AddMember("key4", object1, allocator);

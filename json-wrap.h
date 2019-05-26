@@ -1,6 +1,7 @@
 #ifndef _RAPIDJSON_WRAP_H__
 #define _RAPIDJSON_WRAP_H__
 
+#include <string>
 #include "document.h"
 #include "writer.h"
 #include "stringbuffer.h"
@@ -15,7 +16,7 @@ public:
 
 public:
 	void parse(const std::string& jsonFormat) {
-		_json.Parse(jsonFormat.c_str());
+        _json.Parse(jsonFormat.c_str());
 	}
 
 public:
