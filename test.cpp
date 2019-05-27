@@ -44,7 +44,7 @@ void testTraditionRapidJson()
 	rapidjson::Value object(rapidjson::kObjectType);
 	object.AddMember("key1", rapidjson::Value("Value1", allocator), allocator);
 	object.AddMember("key2", true, allocator);
-    object.AddMember("key3", rapidjson::Value(rapidjson::kNullType), allocator);
+    object.AddMember("key3", 'a', allocator);
 	rapidjson::Value object1(rapidjson::kObjectType);
 	object1.AddMember<char>("c", 'a', allocator);
 	object.AddMember("key4", object1, allocator);
