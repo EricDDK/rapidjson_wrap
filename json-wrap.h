@@ -13,19 +13,38 @@ class Json
 public:
 	Json() {}
 	~Json() {}
+	Json(const Json& j) {}
+	Json& operator=(const Json& j)
+	{
+		return *this;
+	}
+
+	Json(bool b) {}
+	Json(int i) {}
+	Json(double d) {}
+	Json(const char* c) {}
+	Json(const std::string& s) {}
 
 public:
-	void parse(const std::string& jsonFormat) {
+	void parse(const std::string& jsonFormat) 
+	{
         _json.Parse(jsonFormat.c_str());
 	}
 
 public:
-	template<typename T>
-	T get(const std::string& key) {
-		if (_json.HasMember(key.c_str())) {
-			return static_cast<T>(_json[key.c_str()].GetInt());
-		}
-		return NULL;
+	Json& operator[](const std::string& key)
+	{
+		return *this;
+	}
+
+	Json& operator[](const char* key)
+	{
+		return *this;
+	}
+
+	Json& operator[](size_t index)
+	{
+		return *this;
 	}
 
 private:

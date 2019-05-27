@@ -23,7 +23,9 @@ void testJsonWrap1()
 	std::string jsonFormat = "{\"value\": 123}";
 	rapidjson::Json json;
 	json.parse(jsonFormat);
-	int value = json.get<int>("value");
+	auto a = json["key"];
+	
+
 	return;
 }
 
